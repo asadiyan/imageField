@@ -4,11 +4,7 @@ from rest_framework import serializers
 
 
 def create_path(instance, filename):
-    flag = True
-    if flag:
-        path = f'hamid/behzad/{filename}'
-    else:
-        path = f'hamid/milad/{filename}'
+    path = f'hamid/{filename}'
 
     return path
 
@@ -24,7 +20,6 @@ class Spent(models.Model):
 
 class Image(models.Model):
     image_path = models.ImageField(upload_to=create_path)
-
 
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None):
